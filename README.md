@@ -30,7 +30,6 @@ Things you may want to cover:
 |name|string|null: false|
 |email|string|null: false, add_index :users, :email|
 |password|string|null: false|
-|group_id|integer|null: false|
 
 ### Association
 - has_many :users_groups
@@ -42,8 +41,7 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|groups|string|null: false|
-|user_id|integer|null: false|
+|name|string|null: false|
 
 ### Association
 - has_many :users_groups
@@ -65,8 +63,8 @@ Things you may want to cover:
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|body|text|foreign_key: true|
-|image|text|foreign_key: true|
+|body|text|
+|image|text|
 |user_id|integer|null: false, foreign_key: ture|
 |group_id|integer|null: false, foreign_key: true|
 
