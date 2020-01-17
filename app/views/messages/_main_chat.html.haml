@@ -1,0 +1,80 @@
+.main
+  .main__header
+    .main__header__group
+      techcamp
+    .main__header__nickname
+      Menber : masa
+    =link_to "Edit", "#", class: "main__header__btn main__header__btn--edit"
+  .main__chatBox
+    .main__chatBox__user
+      .main__chatBox__user__nickname
+        masa
+      .main__chatBox__user__dayTime
+        2020/1/17(Fri) 12:12:12
+    .main__chatBox__message
+      確認コメント
+
+    .main__chatBox__user
+      .main__chatBox__user__nickname
+        masa
+      .main__chatBox__user__dayTime
+        2020/1/17(Fri) 12:12:12
+    .main__chatBox__message
+      確認コメント
+
+    .main__chatBox__user
+      .main__chatBox__user__nickname
+        masa
+      .main__chatBox__user__dayTime
+        2020/1/17(Fri) 12:12:12
+    .main__chatBox__message
+      確認コメント
+
+    .main__chatBox__user
+      .main__chatBox__user__nickname
+        masa
+      .main__chatBox__user__dayTime
+        2020/1/17(Fri) 12:12:12
+    .main__chatBox__message
+      確認コメント
+
+    .main__chatBox__user
+      .main__chatBox__user__nickname
+        masa
+      .main__chatBox__user__dayTime
+        2020/1/17(Fri) 12:12:12
+    .main__chatBox__message
+      確認コメント
+
+    .main__chatBox__user
+      .main__chatBox__user__nickname
+        masa
+      .main__chatBox__user__dayTime
+        2020/1/17(Fri) 12:12:12
+    .main__chatBox__message
+      確認コメント
+
+    .main__chatBox__user
+      .main__chatBox__user__nickname
+        masa
+      .main__chatBox__user__dayTime
+        2020/1/17(Fri) 12:12:12
+    .main__chatBox__message
+      確認コメント
+
+    .main__chatBox__user
+      .main__chatBox__user__nickname
+        masa
+      .main__chatBox__user__dayTime
+        2020/1/17(Fri) 12:12:12
+    .main__chatBox__message
+      確認コメント
+
+  = form_for "#" do |f|#リセットCSSのformがここでボックスを作っている
+    .main__footer
+      .main__footer__formBox
+        = f.text_field "text", placeholder: "type a message", class: "main__footer__formBox__text"
+        = f.label :image, class: "main__footer__formBox__pic" do
+          %i.far.fa-images
+          = f.file_field :image, class: "main__footer__formBox__pic--icon"
+      = f.submit "Send", class: "main__footer__formBtn"
