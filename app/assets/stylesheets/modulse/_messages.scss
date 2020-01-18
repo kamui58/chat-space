@@ -1,0 +1,180 @@
+@import "./config/variable";
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+
+
+  .side {
+    width: 300px;
+    height: 100vh;
+    background-color: $sideGroupColor;
+    overflow: hidden;
+    
+    &__header {
+      position: fixed;
+      display: flex;
+      align-items: center;
+      height: 100px;
+      width: 300px;
+      background-color: $sideHeaderColor;
+      &__box{
+        height: 20px;
+        display: flex;
+        justify-content: space-between;
+        width: 260px;
+        margin: 0 20px;
+        &__nickname{
+          line-height: 20px;
+          color: $sideColorWhite;
+          font-size: 16px;
+        }
+        &__linkBox{
+          display: flex;
+          justify-content: flex-end;
+          width: 60px;
+          line-height: 20px;
+          &__btn{
+            display: block;
+            color: $sideColorWhite;
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+    &__group {
+      background-color: $sideGroupColor;
+      padding-top: 100px;
+      height: 100%;
+      width: $scrollHide;
+      overflow-y: scroll;
+      &__box{
+        padding-left: 20px;
+        &__title{
+          display: block;
+          text-decoration: none;
+          font-size: 15px;
+          color: $sideColorWhite;
+          padding: 20px 0 5px 0;
+        }
+        &__message{
+          font-size: 11px;
+          color: $sideColorWhite;
+          padding-bottom: 40px;
+        }
+      }
+    }
+  }
+
+  .main {
+    width: $mainWidth;
+    height: 100vh;
+    background-color: $mainChatBoxColor;
+    z-index: 1;
+    overflow: hidden;
+
+    &__header{
+      position: fixed;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100px;
+      width: $mainWidth;
+      background-color: $mainHeaderColor;
+      padding: 0 40px;
+
+      &__group{
+        font-size: 20px;
+        color: $mainColorBlack;
+      }
+
+      &__nickname{
+        position: absolute;
+        bottom: 0;
+        color: $mainColorGrey;
+      }
+
+      &__btn{
+        display: block;
+        text-decoration: none;
+        height: 40px;
+        width: 72px;
+        color: $mainBtnColor;
+        border: solid 1px $mainBtnColor;
+
+        &--edit{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+
+    &__chatBox{
+      padding: 100px 0 90px 40px;
+      height: 100%;
+      width: $scrollHide;
+      background-color: $mainChatBoxColor;
+      overflow-y: scroll;
+      &__user{
+        display: flex;
+        padding: 35px 0 12px 0;
+        &__nickname{
+          font-size: 16px;
+          color: $mainColorBlack;
+          padding-right: 5px;
+        }
+        &__dayTime{
+          font-size: 12px;
+          color: $mainColorGrey;
+          line-height: 20px;
+        }
+      }
+      &__message{
+        font-size: 14px;
+        color: #434A54;
+      }
+    }
+    &__footer{
+      position: fixed;
+      display: flex;
+      align-items: center;
+      width: $mainWidth;
+      bottom: 0;
+      height: 90px;
+      background-color: $mainFooterColor;
+      &__formBox{
+        position: relative;
+        display: flex;
+        width: 100%;
+        padding-left: 40px;
+        &__text{
+          height: 50px;
+          width: 100%;
+          padding: 0 10px;
+          border: none;
+        }
+        &__pic{
+          position: absolute;
+          top: 15px;
+          right: 10px;
+          cursor: pointer;
+          &--icon{
+            display: none;
+          }
+        }
+      }
+      &__formBtn{
+        height: 50px;
+        width: 100px;
+        margin: 0 40px 0 15px;
+        color: $sideColorWhite;
+        background-color: $mainBtnColor;
+        cursor: pointer;
+      }
+    }
+  }
+}
