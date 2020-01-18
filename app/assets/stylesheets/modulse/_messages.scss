@@ -11,7 +11,7 @@
   .side {
     width: 300px;
     height: 100vh;
-    background-color: #2f3e51;
+    background-color: $sideGroupColor;
     overflow: hidden;
     
     &__header {
@@ -20,7 +20,7 @@
       align-items: center;
       height: 100px;
       width: 300px;
-      background-color: #253141;
+      background-color: $sideHeaderColor;
       &__box{
         height: 20px;
         display: flex;
@@ -29,7 +29,7 @@
         margin: 0 20px;
         &__nickname{
           line-height: 20px;
-          color: #ffffff;
+          color: $sideColorWhite;
           font-size: 16px;
         }
         &__linkBox{
@@ -39,14 +39,14 @@
           line-height: 20px;
           &__btn{
             display: block;
-            color: #ffffff;
+            color: $sideColorWhite;
             margin-left: 5px;
           }
         }
       }
     }
     &__group {
-      background-color: #2f3e51;
+      background-color: $sideGroupColor;
       padding-top: 100px;
       height: 100%;
       width: $scrollHide;
@@ -57,12 +57,12 @@
           display: block;
           text-decoration: none;
           font-size: 15px;
-          color: #ffffff;
+          color: $sideColorWhite;
           padding: 20px 0 5px 0;
         }
         &__message{
           font-size: 11px;
-          color: #ffffff;
+          color: $sideColorWhite;
           padding-bottom: 40px;
         }
       }
@@ -72,7 +72,7 @@
   .main {
     width: $mainWidth;
     height: 100vh;
-    background-color: #fafafa;
+    background-color: $mainChatBoxColor;
     z-index: 1;
     overflow: hidden;
 
@@ -83,18 +83,18 @@
       align-items: center;
       height: 100px;
       width: $mainWidth;
-      background-color: #ffffff;
+      background-color: $mainHeaderColor;
       padding: 0 40px;
 
       &__group{
         font-size: 20px;
-        color: #333333;
+        color: $mainColorBlack;
       }
 
       &__nickname{
         position: absolute;
         bottom: 0;
-        color: #999999;
+        color: $mainColorGrey;
       }
 
       &__btn{
@@ -102,8 +102,8 @@
         text-decoration: none;
         height: 40px;
         width: 72px;
-        color: #38aef0;
-        border: solid 1px #38aef0;
+        color: $mainBtnColor;
+        border: solid 1px $mainBtnColor;
 
         &--edit{
           display: flex;
@@ -117,19 +117,19 @@
       padding: 100px 0 90px 40px;
       height: 100%;
       width: $scrollHide;
-      background-color: #fafafa;
+      background-color: $mainChatBoxColor;
       overflow-y: scroll;
       &__user{
         display: flex;
         padding: 35px 0 12px 0;
         &__nickname{
           font-size: 16px;
-          color: #333333;
+          color: $mainColorBlack;
           padding-right: 5px;
         }
         &__dayTime{
           font-size: 12px;
-          color: #999999;
+          color: $mainColorGrey;
           line-height: 20px;
         }
       }
@@ -145,7 +145,7 @@
       width: $mainWidth;
       bottom: 0;
       height: 90px;
-      background-color: #d2d2d2;
+      background-color: $mainFooterColor;
       &__formBox{
         position: relative;
         display: flex;
@@ -171,8 +171,8 @@
         height: 50px;
         width: 100px;
         margin: 0 40px 0 15px;
-        color: #ffffff;
-        background-color: #29a3e0;
+        color: $sideColorWhite;
+        background-color: $mainBtnColor;
         cursor: pointer;
       }
     }
