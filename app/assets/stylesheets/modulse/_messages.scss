@@ -53,17 +53,23 @@
       overflow-y: scroll;
       &__box{
         padding-left: 20px;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
         &__title{
-          display: block;
-          text-decoration: none;
+          
           font-size: 15px;
           color: $sideColorWhite;
-          padding: 20px 0 5px 0;
+          text-decoration: none;
         }
         &__message{
+          
           font-size: 11px;
           color: $sideColorWhite;
-          padding-bottom: 40px;
+          text-decoration: none;
+          
         }
       }
     }
