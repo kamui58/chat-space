@@ -1,23 +1,16 @@
 .main
   .main__header
     .main__header__group
-      techcamp
+      = @group.name
     .main__header__nickname
       Menber : 
-      = current_user.name
+      - @group.users.each do |user|
+        = user.name
 
-    = link_to "Edit", "#", class: "main__header__btn main__header__btn--edit"
+    = link_to "Edit", edit_group_path(@group.id), class: "main__header__btn main__header__btn--edit"
 
   .main__chatBox
-
-    .main__chatBox__user
-      .main__chatBox__user__nickname
-        masa
-      .main__chatBox__user__dayTime
-        2020/1/17(Fri) 12:12:12
-    .main__chatBox__message
-      確認コメント
-
+    = render @messages
 
   = form_for [@group, @message] do |f|
     .main__footer
