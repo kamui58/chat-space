@@ -14,8 +14,12 @@
   .side__group
     - current_user.groups.each do |group|
       .side__group__box
-        = link_to  do
-          .side__group__box__title
-            %a= group.name
-          .side__group__box__message
-            %aメッセージはまだありません。
+        = link_to "#{group.name}", group_messages_path(group.id), class: "side__group__box__title"
+        .side__group__box__message
+          - if (last_message = group.messages.last).present?
+            - if last_message.body?
+              = last_message.body
+            - else
+              = "画像が投稿されています"
+          - else
+            = "まだメッセージはありません。"
