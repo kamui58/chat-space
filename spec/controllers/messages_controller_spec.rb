@@ -63,7 +63,7 @@ describe MessagesController, type: :controller do
       end
 
       context 'can not save' do
-        let(:invalid_params) { { group_id: group.id, user_id: user.id, message: attributes_for(:message, content: nil, image: nil) } }
+        let(:invalid_params) { { group_id: group.id, user_id: user.id, message: attributes_for(:message, body: nil, image: nil) } }
 
         subject {
           post :create,
@@ -71,12 +71,14 @@ describe MessagesController, type: :controller do
         }
 
         it 'does not count up' do
-          expect{ subject }.to change(Message, :count)
+          expect{ subject }.not_to change(Message, :count)
         end
 
         it 'renders index' do
           subject
-          expect(response).to render_template @index
+          # expect(response).to render_template @index
+          expect(response).to render_template :index
+          # expect(response).to render_template("index")
         end
       end
     end
