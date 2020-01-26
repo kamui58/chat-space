@@ -2,21 +2,22 @@ $(function(){
 
   function buildHTML(message){
     if (message.image) {
-      var html =` <div class="main__chatBox__user">
-                    <div class="main__chatBox__user__nickname">
-                      ${message.user_name}
-                    </div>
-                    <div class="main__chatBox__user__dayTime">
-                      ${message.date}
-                    </div>
-                  </div>
-                  <div class="main__chatBox__message">
-                    <p class="main__chatBox__message__body">
-                      ${message.body}
-                    </p>
-                  </div>
-                  <img class="main__chatBox__message__image" src=${message.image}>`
-                return html;
+      var html =
+      ` <div class="main__chatBox__user">
+          <div class="main__chatBox__user__nickname">
+            ${message.user_name}
+          </div>
+          <div class="main__chatBox__user__dayTime">
+            ${message.date}
+          </div>
+        </div>
+        <div class="main__chatBox__message">
+          <p class="main__chatBox__message__body">
+            ${message.body}
+          </p>
+        </div>
+        <img class="main__chatBox__message__image" src=${message.image}>`
+      return html;
     } else {
       var html =
       `<div class="main__chatBox__user">
@@ -51,16 +52,15 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $(".main__chatBox").append(html);
-      // $('.main__chatBox').animate({ scrollTop: $('.main__chatBox')[0].scrollHeight});
       $(".main__chatBox").animate({ scrollTop: $(".main__chatBox")[0].scrollHeight});
       $("form")[0].reset();
-      $(".main__footer__formBtn").prop( 'disabled', false );
 
     })
     .fail(function(){
       alert("メッセージ送信に失敗しました");
+    })
+    .always(function(){
       $(".main__footer__formBtn").prop( 'disabled', false );
     });
-
   });
 });
