@@ -11,7 +11,6 @@ $(function(){
     .done(function(messages){
 
       if (messages.length !== 0) {
-        console.log(messages)
         var insertHTML = '';
         $.each(messages, function(i, message){
           insertHTML += buildHTML(message)
@@ -30,7 +29,7 @@ $(function(){
   function buildHTML(message){
     if (message.image) {
       var html =
-    ` <div class="message" data-message:id=${message.id}>
+    ` <div class="message" data-message-id=${message.id}>
         <div class="main__chatBox__user">
           <div class="main__chatBox__user__nickname">
             ${message.user_name}
@@ -84,7 +83,7 @@ $(function(){
       var html = buildHTML(data);
       $(".main__chatBox").append(html);
       $(".main__chatBox").animate({ scrollTop: $(".main__chatBox")[0].scrollHeight});
-      $("form")[0].reset();
+      $("#new_message")[0].reset();
 
     })
     .fail(function(){
