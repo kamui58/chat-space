@@ -17,6 +17,6 @@
       .main__footer__formBox
         = f.text_field :body, placeholder: "type a message", class: "main__footer__formBox__text"
         = f.label :image, class: "main__footer__formBox__pic" do
-          %i.far.fa-images
+          %i.fas.fa-image
           = f.file_field :image, class: "main__footer__formBox__pic--icon"
       = f.submit "Send", class: "main__footer__formBtn"
